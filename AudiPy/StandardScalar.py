@@ -17,7 +17,7 @@ class StandardScalar:
         return ((maxf-minf) * data/max(data) + minf)
 
     # normalize to twelve tone
-    def normalize_twelve_tone(self, data):
+    def normalize_twelve_tone(self, data, minf=None, maxf=None):
         return np.multiply(63, np.power(2,np.divide(data,12)))
 
     # normalize by scaled
