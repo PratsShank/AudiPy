@@ -7,14 +7,7 @@ import numpy as np
 # load the image and convert into numpy array of avg
 # of r g b values
 def numpyImg(imgName):
-    # load image
-    #img = cv.imread(imgName)
-
-    #print(img)
-    
-    ###STOP###
-
-    # Load the image (ensure it's in color)
+       # Load the image (ensure it's in color)
     image = cv2.imread(imgName)  # Replace with your image path
 
     # Convert from BGR (OpenCV default) to RGB
@@ -43,6 +36,7 @@ def numpyImg(imgName):
         #ADDED
         #avg_rgb = np.mean(column_pixels[:,:],axis=0)
         #avg_rgb_values.append(avg_rgb)
+        
         # Store values
         avg_r_values.append(avg_r)
         avg_g_values.append(avg_g)
@@ -59,4 +53,7 @@ def numpyImg(imgName):
 
     #print(avg_rgb_values)
     np.savetxt("rgb_averages1.csv", avg_rgb_values, delimiter=" ", fmt="%.0f", header="", comments="")
-    #np.savetxt("rgb_averages1.csv", avg_rgb_values, delimiter=",")
+
+    #print(avg_r_values)
+    #print(avg_g_values)
+    #print(avg_b_values)
