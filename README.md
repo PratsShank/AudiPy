@@ -16,7 +16,7 @@ For instance, do you want the larger data to be higher pitched or lower pitched?
 2. min_freq -int(0 < n < max)
 3. max_freq - int(min < n < 22K)
 4. Mode, -String("major", "")
-5. Key = "C", -String("A", "A#")
+5. 
 6. Sound
 7. Time
 8. Ascending
@@ -26,17 +26,17 @@ For instance, do you want the larger data to be higher pitched or lower pitched?
 ### Image Parameters
 1. min
 2. max
-3. mode
-4. key
+3. 
+4. 
 5. data
 6. RGB
-7. sound
+7. 
 8. time
 
 ### Linear Error
 1. Data -ID np.array
 2. min_freq -int(0 < n < max)
 3. max_freq - int(min < n < 22K)
-4. Mode, -String("major", "")
-5. Key = "C", -String("A", "A#")
+4. 
+5.
 6. Sound
