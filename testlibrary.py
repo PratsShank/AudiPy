@@ -3,7 +3,7 @@ import AudiPy
 import numpy as np
 from AudiPy import Generator
 from AudiPy import StandardScalar
-
+from AudiPy.Output import Output
 
 #print("here")
 
@@ -38,6 +38,10 @@ Gen = Generator()
 
 Matrix = Gen.data_matrix(array=test4, time=t)
 
+Out = Output()
+
+Out.write(Data=Matrix)
+
 # print(converted_music)
 
-line.write(Data=Matrix)
+# line.write(Data=Matrix)

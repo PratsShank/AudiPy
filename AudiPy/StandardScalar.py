@@ -24,18 +24,3 @@ class StandardScalar:
     # normalize by scaled
     def normalize_scaled(self):
         return np.subtract(self.data,np.min(self.data)) / np.subtract(np.max(self.data),np.min(self.data)) * ((self.maxf-self.minf)) + self.minf
-
-    def write(self, Data):
-        # total time of the track
-        self.data = Data
-
-        # print("Data", Data)
-
-        # sample rate
-        SAMPLE_RATE = 44100                
-
-        # print("Transposed", Data.T)
-        Transposed = Data.T
-        # data = np.ndarray(0)
-
-        write("example.wav", SAMPLE_RATE, Transposed.astype(np.float32))
