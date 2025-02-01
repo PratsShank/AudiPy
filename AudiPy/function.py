@@ -17,12 +17,13 @@ def normalize_twelve_tone(data):
 def normalize_scaled(min, max, data):
     return np.subtract(data,np.min(data)) / np.subtract(np.max(data),np.min(data)) * ((max-min)) + min
 
-def play(length, data):
+def play(length, data, data2):
     # total time of the track
     t = length
 
     # Frequencies to play
     Freq = data
+    Freq2 = data2
 
     # sample rate
     SAMPLE_RATE = 44100
@@ -48,17 +49,18 @@ def play(length, data):
 
     previous_samples = 0
     data_interval = np.ndarray(0)
-    for freq in Freq:
+    for freq in Freq2:
         cur_samples = ns[previous_samples:(previous_samples+sample_size)]
         previous_samples += sample_size
-        data_interval = np.append(data_interval, amplitude * np.sin(2. * np.pi * (500) * cur_samples))
+        data_interval = np.append(data_interval, amplitude * np.sin(2. * np.pi * (freq) * cur_samples))
 
-    data = np.concat(data, data_interval)
-    offset = np.min(data)
-    data = data - offset
-    write("example.wav", SAMPLE_RATE, data.astype(np.int16))
+    data = np.column_stack((data, data_interval))
+    print(data)
+    write("example.wav", SAMPLE_RATE, data.astype(np.float32))
 
-test = np.linspace(50, 50, 1)
+test = np.linspace(1, 50, 50)
+test2 = np.linspace(50, 1, 50)
 test = normalize_twelve_tone(test)
-print(test)
-play(10, [350])
+test2 = normalize_twelve_tone(test2)
+
+play(10, test, test2)
