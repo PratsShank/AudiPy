@@ -1,23 +1,5 @@
-from setuptools import setup, find_packages, Extension
-import pybind11
+from setuptools import setup, find_packages
 
-#This is where the cpp files will go and the format of how it would be included
-'''
-ext_modules = [
-    Extension(
-        "AudioFileCpp",  # Name of the compiled C++ module
-        [
-            "src/audiofile.cpp",
-            "src/audio_processing.cpp",
-            "src/audio_utils.cpp"
-            
-        ],  # List all C++ source files here
-        include_dirs=[pybind11.get_include()],  # Include pybind11 headers
-        language="c++",
-        extra_compile_args=["-std=c++11"],  # Ensure C++11+ support
-    ),
-]
-'''
 setup(
     name='AudioFile',
     version='0.1',
