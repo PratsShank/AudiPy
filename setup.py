@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='AudioFile',
+    name='Audipy',
     version='0.1',
     description='A simple audio file reader',
     long_description='A simple audio file reader',
