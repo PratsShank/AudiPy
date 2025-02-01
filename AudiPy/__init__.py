@@ -1,10 +1,10 @@
-# Initilization
-
-from . import StandardScalar
+import numpy as np
+import sys
 from .StandardScalar import StandardScalar
 from .Generator import Generator
-from .RGBMatrix import RGBMatrix
-from .DataMatrix import DataMatrix
 from .Output import Output
+from .AudiPy import AudiPy 
 
-__all__ = ["StandardScalar"]
+sys.modules[__name__] = AudiPy()
+
+__all__ = ["AudiPy", "StandardScalar", "Generator", "Output"]

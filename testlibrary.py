@@ -5,7 +5,11 @@ from AudiPy import Generator
 from AudiPy import StandardScalar
 from AudiPy.Output import Output
 
+import AudiPy
+
 #print("here")
+
+Audi = AudiPy()
 
 line = StandardScalar(minf=20, maxf=4000)
 

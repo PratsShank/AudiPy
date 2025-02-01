@@ -45,8 +45,4 @@ class Generator:
         return converted_music
     
     def rgb_matrix(self, matrix):
-        if not isinstance(matrix, RGBMatrix):
-            print("NOT VALID")
-            return
-
         return
