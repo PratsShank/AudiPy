@@ -57,3 +57,6 @@ def numpyImg(imgName):
     #print(avg_r_values)
     #print(avg_g_values)
     #print(avg_b_values)
+
+    # return the numpy array
+    return avg_rgb_values
