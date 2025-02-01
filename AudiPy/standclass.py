@@ -18,53 +18,26 @@ class Standard:
         return ((self.maxf-self.minf) * self.data/max(self.data) + self.minf)
 
     # normalize to twelve tone
-    def normalize_twelve_tone(data):
+    def normalize_twelve_tone(self, data):
         return np.multiply(63, np.power(2,np.divide(data,12)))
 
     # normalize by scaled
     def normalize_scaled(self):
         return np.subtract(self.data,np.min(self.data)) / np.subtract(np.max(self.data),np.min(self.data)) * ((self.maxf-self.minf)) + self.minf
 
-    def write(self, time, Data, Data2):
+    def write(self, time, Data):
         # total time of the track
         self.time = time
         self.data = Data
-        self.data2 = Data2
         t =  self.time
-
-        # Frequencies to play
-        Freq = Data
-        Freq2 = Data2
+        
+        # print("Data", Data)
 
         # sample rate
-        SAMPLE_RATE = 44100
+        SAMPLE_RATE = 44100                
 
-        # calculate sample steps
-        ns = np.linspace(0., t, SAMPLE_RATE * t)
-        amplitude = np.iinfo(np.int16).max
+        # print("Transposed", Data.T)
+        Transposed = Data.T
+        # data = np.ndarray(0)
 
-        # samples per pitch
-        sample_size= int(len(ns)/len(Freq))
-
-        #Nyquist Theorem
-        if sample_size <= max(Freq) * 2:
-            print("Nyquist Theorem is failed!")
-            quit
-
-        previous_samples = 0
-        data = np.ndarray(0)
-        for freq in Freq:
-            cur_samples = ns[previous_samples:(previous_samples+sample_size)]
-            previous_samples += sample_size
-            data = np.append(data, amplitude * np.sin(2. * np.pi * freq * cur_samples))
-
-        previous_samples = 0
-        data_interval = np.ndarray(0)
-        for freq in Freq2:
-            cur_samples = ns[previous_samples:(previous_samples+sample_size)]
-            previous_samples += sample_size
-            data_interval = np.append(data_interval, amplitude * np.sin(2. * np.pi * (freq) * cur_samples))
-
-        data = np.column_stack((data, data_interval))
-        print(data)
-        write("example.wav", SAMPLE_RATE, data.astype(np.float32))
+        write("example.wav", SAMPLE_RATE, Transposed.astype(np.float32))
