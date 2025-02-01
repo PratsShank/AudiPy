@@ -23,3 +23,20 @@ For instance, do you want the larger data to be higher pitched or lower pitched?
 9. Comparison
 10. Normalization
 
+### Image Parameters
+1. min
+2. max
+3. mode
+4. key
+5. data
+6. RGB
+7. sound
+8. time
+
+### Linear Error
+1. Data -ID np.array
+2. min_freq -int(0 < n < max)
+3. max_freq - int(min < n < 22K)
+4. Mode, -String("major", "")
+5. Key = "C", -String("A", "A#")
+6. Sound
