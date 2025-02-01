@@ -1,4 +1,4 @@
-from AudiPy import standclass as stc
+from AudiPy import StandardScalar as stc
 import numpy as np
 
 #print("here")

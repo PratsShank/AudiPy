@@ -1,7 +1,7 @@
 from scipy.io.wavfile import write
 import numpy as np
 
-class Standard:
+class StandardScalar:
     def __init__(self, minf, maxf):
         self.minf = minf
         self.maxf = maxf

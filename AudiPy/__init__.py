@@ -1,6 +1,6 @@
 # Initilization
 
 from .inputdata import read_dataset_pandas
-from . import standclass
+from . import StandardScalar
 
-__all__ = ["standclass"]
+__all__ = ["StandardScalar"]
