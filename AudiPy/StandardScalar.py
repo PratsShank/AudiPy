@@ -8,6 +8,9 @@ class StandardScalar:
         self.data = 0
         self.data2 = 0
         self.time = 0 
+
+    def __call__(self, minf, maxf):
+        return
     
     # normalize data between the range of min to max with a sine curve
     def normalize_sine(self):
@@ -25,12 +28,10 @@ class StandardScalar:
     def normalize_scaled(self):
         return np.subtract(self.data,np.min(self.data)) / np.subtract(np.max(self.data),np.min(self.data)) * ((self.maxf-self.minf)) + self.minf
 
-    def write(self, time, Data):
+    def write(self, Data):
         # total time of the track
-        self.time = time
         self.data = Data
-        t =  self.time
-        
+
         # print("Data", Data)
 
         # sample rate
