@@ -14,9 +14,9 @@ test4 = np.array([test, test2], dtype=object)
 
 # print(test4)
 
-t = 10
-
-final = Audi.convert_to_audio(data=test4, min_freq=20, max_freq=4000,  time=t)
+t = 15
+preprocess = Audi.pre_process(filename="C:\\Users\\Cayden\\Downloads\\Save_webP\\ZigZag.png")
+final = Audi.convert_to_audio(data=preprocess, min_freq=20, max_freq=4000,  time=t)
 
 # test = line.normalize_twelve_tone(test)
 # test2 = line.normalize_twelve_tone(test2)

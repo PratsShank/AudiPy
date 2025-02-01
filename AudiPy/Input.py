@@ -5,21 +5,26 @@ import os
 
 class Input:
 
-    def __call__(self, filename):
+    def __init__(self):
+        return
 
+    def take_file(self, filename):
+        
         file_ext = os.path.splitext(filename)[1].lower()
+
+        print('yuh')
 
         if file_ext in [".csv"]:
             array = self.read_dataset_csv(filename)
             #array = wrapcsv(array)
-            return # to caller
+            return array
         elif file_ext in [".jpg", ".png"]:
             array = self.read_dataset_img(filename)
             #array = wrapimg(array)
-            return # to caller
+            return array
         else:
             raise ValueError("Error, file type not matching")
-    
+        
 
     # Input for CSV files that will convert to numpy files for processing
     def read_dataset_csv(self, filename):
@@ -81,7 +86,7 @@ class Input:
         avg_b_values = np.array(avg_b_values)
 
         #ADDED
-        avg_rgb_values = np.stack((avg_r_values, avg_g_values, avg_b_values), axis=1)
+        avg_rgb_values = np.stack((avg_r_values, avg_g_values, avg_b_values), axis=0)
         #print(avg_rgb_values)
 
         return avg_rgb_values
@@ -89,4 +94,3 @@ class Input:
         #print(avg_rgb_values)
         #np.savetxt("rgb_averages1.csv", avg_rgb_values, delimiter=" ", fmt="%.0f", header="", comments="")
         #np.savetxt("rgb_averages1.csv", avg_rgb_values, delimiter=",")
-

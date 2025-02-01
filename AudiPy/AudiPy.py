@@ -9,13 +9,14 @@ class AudiPy():
         self.scalar = StandardScalar()
         self.generator = Generator()
         self.output = Output()
+        self.input = Input()
         return
     
     def __call__(self):
         return
 
     def pre_process(self, filename):
-        matrix = Input(filename)
+        matrix = self.input.take_file(filename)
         return matrix
     
     def convert_to_audio(self, data, min_freq, max_freq, time, sound = None, ascending = None):
