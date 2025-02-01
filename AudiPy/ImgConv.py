@@ -36,7 +36,7 @@ def numpyImg(imgName):
         #ADDED
         #avg_rgb = np.mean(column_pixels[:,:],axis=0)
         #avg_rgb_values.append(avg_rgb)
-        
+
         # Store values
         avg_r_values.append(avg_r)
         avg_g_values.append(avg_g)
@@ -48,7 +48,7 @@ def numpyImg(imgName):
     avg_b_values = np.array(avg_b_values)
 
     #ADDED
-    avg_rgb_values = np.stack((avg_r_values, avg_g_values, avg_b_values), axis=1)
+    avg_rgb_values = np.stack((avg_r_values, avg_g_values, avg_b_values), axis=0)
     #print(avg_rgb_values)
 
     #print(avg_rgb_values)
