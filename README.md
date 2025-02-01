@@ -1,4 +1,4 @@
-## AudioFile Group 
+## AudiPy Group 
 
 This will be a Python library, 
 that will read in some input and output some audio format version of that input. 
