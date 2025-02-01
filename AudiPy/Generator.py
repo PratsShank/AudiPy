@@ -18,7 +18,7 @@ class Generator:
 
         #Nyquist Theorem
         for channel in array:
-            if sample_size <= max(channel) * 2:
+            if SAMPLE_RATE <= max(channel) * 2:
                 print("Nyquist Theorem is failed!")
                 quit
 
