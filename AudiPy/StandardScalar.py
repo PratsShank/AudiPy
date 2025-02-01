@@ -5,11 +5,8 @@ class StandardScalar:
     def __init__(self, minf, maxf):
         self.minf = minf
         self.maxf = maxf
-        self.data = 0
-        self.data2 = 0
-        self.time = 0 
 
-    def __call__(self, minf, maxf):
+    def __call__(self):
         return
     
     # normalize data between the range of min to max with a sine curve
